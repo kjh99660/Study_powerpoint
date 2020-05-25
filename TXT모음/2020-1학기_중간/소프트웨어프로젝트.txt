@@ -1,0 +1,332 @@
+2020.03.16 1주차
+
+중급 프로그래밍 수준
+강의 노트는 단순 요약 -> 혼자 이해할 수 없음
+
+6번 개인 프로젝트 진행 -> 4번은 리포트 2번은 CUI, GUI
+프로젝트 비중 성적 33%
+문제 설명서 잘 읽기
+
+진도: 초반에는 자바와 C의 차이점(2주)
+출결: 전자출결, 지각은 1/2결석, 4결석까지는 감점 없음 8결석 -> F
+시험: 강의노트에 없는 프로그램 작성, 시험 성적 공개는 중간 공개 없음, 리포트는 학기말 공개
+
+2020.03.18 1 - 2주차
+#c 와 jave 의 차이점
+
+c에는 있는 pre-processor와 헤더 파일이 없음
+class = [data]+[class] ([]은 생략할 수 있음을 나타냄)
+c = function +[data]
+객체 지향 프로그래밍은 자료구조를 중심으로 프로그래밍한다.
+C는 절차 지향 프로그래밍으로 순서를 결정하며 프로그래밍하지만
+java는 절차에 필요한 요소들을 먼저 생각하고 결정한 후 순서를 만드는 방식으로 프로그래밍한다
+ 
+2020.03.23 2 -1주차
+#프로젝트 설명
+과제 1 10진수를 2진수로 표기하는 java프로그램 ex)10 -> 1 0 1 0
+주의: 리포트 내용, 제출 요구사항 맞추기 pdf 파일 보기
+pdf 파일로 제출
+
+#java 프로그램의 실행 방식
+
+C는 소스코드를 컴파일러가 컴파일 한 후 실행한다
+파이썬 같은 경우 코드를 인터프리터가 코드를 바로 실행한다.
+java는 이 두 방식을 합친 방식을 사용한다
+-> java 코드를 컴파일한 후 나온 중간코드를 java 인터프리터로 코드를 실행한다
+
+java virtual machine(JVM)
+자바 인터프리터가 프로그램을 수행하는 환경/방식
+즉, 자바 인터프리터 안에 있는 머신
+Byte code
+자바 인터프리터가 해석하는 중간 코드를 말한다
+
+인터프리터 방식 장점
+즉시 수행, 이식성, 보안성
+컴파일 방식 장점
+속도,컴파일을 통한 사선 체크 가능
+따라서 자바는 두 가지 방식의 장단점을 모두 가지고 있다.
+
+많은 웹 브라우저가 자바 인터프리터를 내장하고 있어서 바이트 코드를 다운 받은 후 웹에서
+실행 할 수 있다. 이를 자바 앱렛이나 웹 어플리케이션이라고 한다.
+따라서 인터넷 용으로 적합하다
+
+#JDK
+standard adition(J2SE) -> 강의에서 사용하는 기준
+enterprise adition(J2EE)
+micro adition(J2ME)
+이클립스를 통해 개발 및 과제
+
+javadoc comments /** ... */로 기록
+중요) 메소드 오버로딩을 사용할 때 미리 오버로딩을 통해 메소드를 여러 개 만들어 놓는것이 좋을 수 있다
+
+2020.03.25 2 - 2주차
+객체지향에서는 변수와 메서드 선언문이 중요하다
+
+final (상수) 상수 변수는 대문자로 작성한다
+
+java는 char는 16비트를 사용해서 유니코드를 할당하여 사용할 수 있다
+
+Scanner input = new Scanner(System.in);
+double d = input.nextdouble();
+명시적으로 스켄한 뒤 하나씩 할당하는 방법을 채택한다 > c에서 많은 문제가 있었기 때문이다
+
+String 타입은 기본형이 아닌 reference type 이고 System class로 정의되어있다
+
+#작업 저장 공간#
+->지역변수와 함수들은 메모리가 스택 형태로 관리된다
+->전역변수와 메모리 할당은 힙 메모리를 사용한다
+Scanner, String 변수는 힙 영역을 가리키는 참조형으로 메모리를 잡는다(변수의 크기를 알 수 없기 때문이다)
+
+java 프로그래밍 스타일
+naming convention
+0.의미 있고, 잘 표현할 수 있는 단어 사용
+1.소문자 사용
+2.여러 단어를 사용해서 만들 경우, 하나로 연결한 후, 첫 단어는 소문자, 그 다음 단어의 시작은 대문자로 만듦
+ex)computeArea()
+3.클래스 첫 글자는 대문자로 한다
+4.상수의 모든 글자는 대문자로 하며 단어 연결은 underscore로 한다
+5.들여쓰기와 spacing(빈줄) 사용
+6.Block style: Next line style, end of line style 2가지 있음
+
+에러 종류
+syntax error 컴파일러에 의해 발견, runtime error 프로그램 중단이 원인, logic error 정확하지 않은 결과값
+
+GUI 입력 함수
+String input = JOptionPane.showInputDialog("Enter an Input");
+오버로딩이 가능하다
+
+String to int 형변환
+int intValue = Integer.parseInt(intString);
+
+int to String 형변환
+String s = Integer.toString(123);
+String s = String.valuseOf(123);
+String s = "" + 123;
+
+2020.03.30 3-1주차
+#if문과 loop문
+
+같은 문장을 프로그램에 여기저기 두는 습관은 않좋은 습관이므로 고칠것
+프로그램을 고칠 때 놓칠 가능성이 매우 높음
+한군데만 둘 수 있도록 고려해서 작성할 것
+
+switch 문은
+가독성이 높으며
+공통처리와 테이블 형태일 경우 적합
+
+if / else if문은
+예전에는 실행속도 차이가 났지만 지금은 다르다
+switch문을 사용할 수 없는 일반적인 조건식에 사용할 수 있다
+
+java에서 printf를 사용하는 경우는 검증된 c코드를 따올 때만 사용
+나머지의 경우 string으로 변환해서 사용
+
+몬테칼로 시뮬레이션: 반복을 잘 하는 컴퓨터의 특징을 이용해서
+수학적 식을 컴퓨터적 방식을 통해 유추하거나 실행하는 방법
+
+2020.04.01 3-2주차
+#메서드
+call statck 및 return 값 공간 시험에 나옴!
+오버로딩 배움
+
+지역변수 배움
+메서드는 재사용과 관리, 정보 은닉의 장점이 있다
+ 
+자바 기본 클래스 Math-> 삼각함수, max, min,
+random 사용법 배움
+정보 은닉 개념 배움
+
+메서드 추상화
+기본적으로 메서드를 블랙박스로 생각해서 input과 output을 기본으로 생각한다
+
+2020.04.06 4-1주차
+#class
+c와 객체 지향의 차이점
+<c>
+순서적으로 설계
+함수 코딩
+필요한 공간에 대한 변수들은 변수 또는 헤더 파일에 정의
+함수와 변수들은 개별적 존재ex) int printID() string getname()
+동작과 데이터가 분리됨
+
+<객체 지향>
+등장인물과 구성 요소들과 그들의 관계를 설계
+각 구성 요소를 하나의 단위로 묶어서 기술하는 코딩
+상태를 나타내는 변수들
+구성 요소와 관련된 동작함수
+ex)class Student{string Name, int ID,int tuition,printID(),getName()}
+class Staff{string Name, int ID,int salary,printID(),getName()}
+
+2020.04.08 4-2주차
+#class 2
+생성자
+메서드의 일종 객체를 생성할때 호출됨
+페러미터가 없음, 항상 클래스와 같은 이름
+return 값이 없음, new 연산자로 호출(생성), 객체를 초기화하는 역활을 함
+defult constructor가 자동으로 생성되지만 의식적으로 작성할 필요가 있음
+
+new 가 하는 일
+오브젝트 생성, 힙에 공간 확보, 메서드 실행 준비
+
+개체로 접근하는 것이 일반적이다 클래스로 접근하는 것은 static이 아닌이상 바람직한 방법이 아니고
+일반적인 작업이 아니다
+
+메서드를 사용할 때 인자로 값을 넘길 필요는 없다
+인자값은 이미 클래스안에 정의되어있다.
+
+객체를 가리키지 (할당하지) 않은 상태를 null 이라고하며 자바에서는 0과 null을 구분한다
+객체를 생성지 defult값은 0,null,false으로 정해저있지만 이를 이용하지말고 직접 초기화 해주자
+지역변수는 자동으로 초기화되지 않는다
+
+여전히 c언어로 절차 지향으로 작성하는 것이 적합한 프로그램도 많음
+
+#Array
+기본 데이터가 매우 많거나 데이터의 개수가 가변일 때 배열을 사용하는 것이 좋다
+인덱스에 의미가 있을 수 있을 때 배열을 사용하는 것이 좋다
+double[] myList = new double[10]; //일반형
+double myList[] = new double[10]; //c 형식도 허용은 하지만 권장하지 않는다
+중요 : 자바에서 array는 객체로 처리되기 때문에 힙에 할당된다
+
+array의 크기는 고정이다.
+array의 defult값은 0 0 false이다
+
+2020.04.13 5-1주차
+java의 array는 기본형이 아니라 object이다
+for(int i = 0; i< mylist.length; i++) -> 모든 배열을 거치는 정형화된 형태
+
+2020.04.15 5-2주차
+함수 참조 관련 설명 다차원 배열
+자바에서 다차원 배열은 배열에 배열이 있는 재귀적 구성으로 생각한다
+
+2020.04.20 6-1주차
+Date class Random class
+static 변수는 class 소속 객체에 값이 이동하지 않는다
+static 선언시 별도의 힘에 영역이 생긴다
+공유는 고려 사항 중 하나
+
+2020.04.22 6-2주차
+#Visibility
+Default: 같은 패키지 내의 class variable method에 접근 가능
+public: 모든 패키지 class에서 class, data, method에 대한 접근 허용
+private 선언된 class에서만 data, method에 접근 허용
+
+get/set method를 사용해서 private data에 대한 값을 읽거나 변경할 수 있도록 함
+>> 문제가 생길 수 있는 변경값 방지할 수 있다
+
+#Passing object to methods
+메서드에 오브젝트를 넣을 수 있다
+오브젝트를 배열로 표현할 수 있다
+Ex) Circle[] circlearray = new Circle[10];
+하지만 실제로 10개의 오브젝트가 생긴것이 아님 이후 오브젝트를 생성해줘야 사용할 수 있다
+
+2020.04.27 7-1주차
+String message = new String("Welcome");
+자바에서 스트링 오브젝트는 변경이 불가능하다
+#internal string
+s1 = "Hi";
+s2 = new string("Hi");
+s3 = "Hi";
+s1 == s2 | s2 != s1
+자바에서 스트링의 한 위치값을 볼때는 반드시 메서드를 사용할것 c스타일로 배열 형태로 사용 금지
+
+ 2020.05.03 7-2주차
+substring 메서드
+정규표현식
+숫자 [0-9]
+여러개[+%$]
+
+string 이나 charcter같은 클래스의 객체 형식으로 선언하면
+이미 선언되어있는 메서드들을 사용할 수 있다
+
+#Main 메서드 정리
+메인 함수도 invoke할 수 있다
+
+#파일 관련 메서드 설명
+비동기 아웃풋 => 화면 출력과 프로그램의 결과가 동시에 일어나지 않음
+동기식 인풋 => 동시에 진행
+결과값을 보고 버그의 위치를 찾지 말자
+이를 끝내기 위해서 output.flush()를 사용해서 현재 진행중인 출력을 끝내는 명령어를 사용하자
+
+#Class 기술적 내용 정리
+this 는 object 객체 자신을 나타낸다
+통일성 개념 설명
+하나의 클래스로 하나만 정의 설명을 하라
+ex) 학생 클래스는 학생만 직원 클래스는 직원만 둘이 합치려고 하지 말것
+
+재사용 가능하게 설계하기 지나친 최적화를 하지말기
+특정한 가정을 하기 말기
+특정 목적을 염두에 두고 제한적으로 설계하지 말기
+표준 스타일과 규칙을 준수
+
+클래스는 일반적으로 private => 사용자가 접근할 경우가 아닌 경우
+get/set을 사용해서 접근하자
+
+2020.05.11 9 - 1주차
+#상속
+class Circle extends GeomtricObject{}와 같은 형식으로 설정
+private는 상속 내용에서 제외된다
+재정의 가능(overloading)
+-> 상속은 단순 사용이 아니라 프로그램을 구체화하고 작성 방법을 유도하는 기능을 하고 있다.
+
+2020.05.13 9 - 2주차
+A extends B - > A는 B에 덧붙여 정의된다 반대로, A는 B로 일반화해서 어디에든 적용될 수 있다.
+Super class의 생성자는 상속되지 않는다 하지만 암시적 혹은 명시적으로 호출된다
+명시적으로 호출할 경우 super라는 키워드를 사용한다 this와 비슷
+super를 사용하지 않을 경우 Superclass의 매개변수가 없는 생성자가 호출된다 super()
+- super클래스의 생성자 super()
+-메서드 변수에 접근하기 위해서 사용한다 super.
+
+#overriding and overloading
+overriding: 상속받은 메서드를 클래스에 맞게 수정하기 - > run time에 결정된다
+overloading: 이름은 같지만 매개변수가 다른 메서드를 만들기 - > compile time에 결정된다
+
+#Object class and its Methods
+자바의 모든 클래스의 상위클래스에는 Object가 존재한다
+최소한의 통일적으로 처리해야할 근거가 된다
+toString() 메서드, equals() 메서드 등등.... 보통 overriding을 한 후 사용한다
+
+2020.05.18 10 - 1주차
+#상속
+#다형성 동적 바인딩과 일반형 프로그래밍
+다형성:
+동적 바인딩:
+일반형 프로그래밍:
+
+#Casting Object(Casting from Superclass to Subclass)
+Object o = new Student();
+Student는 Object의 하위 클래스이기 때문에 별도의 캐스팅 없이 적법한 문장이다
+그 반대로, Student b = o;는 컴파일 에러가 난다
+컴파일러가 컴파일 중에 o가 본래 Student클래스인지 알 수 없음
+따라서 Student b = (Student)o;로 명시적으로 캐스팅 해야된다
+Primitive type Casting(Ex int 와 float)과는 차이가 있지만 오류방지라는 이유는 같음
+
+2020.05.20 10 - 2주차
+#Type - safe generic programming
+GenericStack<E>
+private ArrayList<E> list = new ArrayList<E>();
+#ArrayList -> insert delete size any object
+ArrayList<자료형> 변수명 = new ArrayList<자료형>();
+get, set, add, size, remove, contains
+
+sub클래스가 super클래스에 public을 은닉할 수 없다
+
+#GUI
+java GUI 만드는 과정
+1.panel, frame class를 정의한다
+2.GUI 구성 요소들을 생성하고, 배치한다
+3.요소들을 그룹핑한다
+4.New frame()으로 실체를 보여줌
+5.각 구성 요소에 event handler를 작성해서 지정 연결
+
+2020.05.25 11-1주차
+#GUI 계속
+flow layout
+위에서 아래로 좌에서 우로 UI를 넣는다
+
+grid layout
+행과 열로 구성된 칸에 맟춰서 배치하는 것
+
+borderlayout
+프레임을 5개의 영역으로 나누고 그 영역을 할당하여 배치하는 것
+5개보다 적으면 빼고 배치 많으면 그룹핑을 한 후 사용
+

@@ -1,0 +1,145 @@
+2020.03.17 1 - 1주차
+태도 10% + 퀴즈10% + 중간 기말(40%)(40%)
+출결은 안들어가니 안와도 괜찮음
+확률과 머신러닝 기술로 구성되어있음
+
+#probability
+1)Set notations
+1.set and elements : set is collection of object which are called elements
+2.size of set : |S| 로 표현한다.
+3.set membership : x (- S  로 표현한다 (집합의 원소이다)
+4.equlity of sets : = 과 /= 로 표현한다 -> 두 집합의 원소가 같거나 한 집합의 모든 원소가 다른 집합의 원소에 포함되면 같은 집합이다
+5.subsets : 부분 집합 , * { }은 공집합을 표현하는 방식이다
+6.subset by filtering : 
+7.universal set :  전체 집합
+8.power set : 멱집합 : 집합의 모든 부분집합으로 구성된 집합
+9.set complement : 여집합
+10.set union : 합집합
+11.set intersection : 교집합
+12.disjoint set : 서로소인 집합
+13.set partition : 집합의 분할 > 각 집합의 교집합은 없어야하며 모든 집합의 합집합은 전체 집합이어야한다
+
+2020.03.24 2 -1주차
+#probabilistic model
+집합을 확률에 적용하기
+element -> outcome
+universal set -> sample space
+subset -> event
+subset(1 element) -> atomic event
+
+2020.03.26 2-2 주차
+1. A가 B에 포함되면 B는 A보다 크거나 같다
+2. A와B의 합집합은 A와 B의 값을 더한 뒤 A와B의 교집합을 뺀것과 같다
+
+1)공집합의 확률은 0이다
+2)사건A가 일어날 확률은 1- A가 일어나지 않을 확률이다
+3)사건 A1 A2 A3의 교집합이 없다면 각 사건 중 하나가 일어날 확률은 각 사건의 합과 같다
+
+experiment: 결과가 하나로 결정되는 일
+sample space: 모집단
+atomic event: 하나의 결과로 구성된 사건
+probability law: 0과 1 사이 값을 가지는 함수
+
+Nonnegativity: 모든 확률 사건은 0보다 크거나 같은 값을 가진다
+Normailization: 모든 사건의 확률의 합은 1이다
+Additivity: 교집합이 0인 두 사건의 합집합의 값은 두 집합의 확률의 합과 같다
+
+#조건 확률 - conditional probability
+Discrete uniform distribution:이산균등분포
+discrete uniform probability law
+
+2020.03.31 3-1주차
+#multiplication rule: 확률 문제의 기본이 되는 조건 중요하다!
+ 
+2020.04.02 3-2주차
+#total probability
+#baya's 정리
+
+2020.04.07 4-1주차
+#total probability and bayes rule 2
+
+2020.04.09 4-2주차
+#Independence
+probabilitstic independence 독립 확률
+AB가 독립이면 A 교집합 B 는 AB의 곱과 같다 
+A, B 독립이면 A 여사건 B 여사건도 독립 - > 
+A, B, C가 독립이려면 AB BC BA ABC가 모두 독립조건을 만족시켜야 한다
+
+2020.04.14 5 -1주차
+#conditional independence
+#Random variable : function that maps from the sample space to the real numbers
+각각의 결과에 서로 다른 별명을 지어주는 것 이라고 생각하면 된다.
+예) 동전 던지기에서 2개의 결과값이 있는데 이를 사용하면 앞은 1 뒤는 0 이라는 별명을 지어줄 수 있는데
+그 때 x=1 앞면 x=0뒷면이 된다
+
+2020.04.16 5-2주차
+Five representative discrete random variables : X takes on any integer value between a and b with equal probability
+1. discrete uniform random variables
+1-1 sample space is finite
+1-2 all outcomes are equally likely
+Each probability has 1/b - a + 1
+
+2. bernoulli random variable
+2-1 there are only two outcome
+For example H and T H happends with probability p and T with probability 1 - p
+
+3. binomial random variable
+3-1 the number of success in n trials
+Ex) the number of heads in n-toss sequence
+
+4. geomatric random variable
+2020.04.21 6 - 1주차
+#Random variable
+#Geomatric random variable: 처음으로 그 사건이 성공할 때의 확률
+
+#Poisson Random variable
+n is very large p is very small
+바이노미알에 수렴한다
+
+#Function of Random variable
+Random variable을 함수로 나타낸 것
+
+E(x) = n * p
+By linearity of Expectation E(x + y) = E(x) + E(y)
+E(xy) = E(x)E(y) x와y가 독립일 경우에만 성립
+
+V(x) = E[X^2] - E[X]^2
+분산 : variance
+표준 편차 : standard deviation
+
+2020.05.03 7 -2주차
+Random Variable 증명
+
+joint probability and mass function
+#marginalization marginal PMF
+
+2020.05.14 9주차
+#Conditional PMF of random variable
+조건 확률 함수의 조건부 확률
+#Conditional Expectation
+조건확률의 평균은 평균을 구하는 식에 조건확률식을 대입해서 구한다
+#Total Expectation Theorem
+
+2020.05.19 10 -1주차
+#PMF of Random Variable
+V[X + Y] = V[X] + V[Y] if X,Y are 독립
+P(x,y) = P(x)P(y) if X,Y are 독립
+E(xy) = E(x)E(y) if X,Y are 독립 but, E(x) + E(y) is always E(x + y)
+
+#Naive Bayes Classifier
+Bayes theorem and comditional probability
+
+#Classification
+A이냐 B냐를 구분하는 것
+#Terminologies
+Observation (x): evidence which we can observe Ex)sentence in email, blood pressure
+Label (y): category of data which we want to infer Ex) spam or non-spam
+Prior probability p(y): common knowledge on category which we kow before whe evidence is not observed
+Ex)사전 지식, 사전에 가지고 있는 확률
+Likelihood p(x|y): probability of observing a certain evidence given the label; y가 결정 되었을 때 정답x를 찾을 확률
+PosteriorP(y|x): probability of a certain label given the observed evidence; 정답x가 결정 되었을 때 카테고리y를 찾을 확률
+
+posterior = Likelihood * prior/ p(x)
+
+2020.05.23 10 - 2주차
+#Naive Bayes classifier

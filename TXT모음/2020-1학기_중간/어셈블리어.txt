@@ -1,0 +1,215 @@
+2020.03.17 1주차
+버추얼 머신 개념
+하이레벨 level4 / 어셈블리어 level3
+머신lan level2 / digital logic level1
+
+데이터 표현
+2진수 2진수 덧셈, 16진수와 덧셈
+부호가 있는 수, 문자
+1)2진수
+MSB = most significant bit
+LSB = least signmficant bit
+2)integer storage size
+byte 8, word 16, double word 32, quadword 64
+3)16진수
+메모리의 주소값을 아는데 16진수가 필요하다
+*2진수에서 부호가 있을 때 1은 음수 0은 양수이다
+*따라서 이를 16진수로 바꾸면 앞자리가 8 이상인 수는 음수라는 것을 알 수 있다
+4)2의 보수
+해당 수에 두 수를 더했을 때 0이 되는 수
+2진수 뺄셈 -> 2진수 + 2의 보수
+
+불 연산
+______________________________________
+2020.03.24 2주차
+#마이크로 컴퓨터 설계
+CPU에는 clock,CU(control unit),ALU(Arithmetic Logic Unit),레지스터로 구성되어있다
+clock 은 하나의 명령을 수행하는데 걸리는 시간을 정한다<명령어 실행 주기>
+메모리 읽기, 프로그램 실행 과정
+
+#IA-32 process
+순서대로
+fetch: 프로그램에서 cpu로 코드 내용을 가져오는 것
+decode: 코드 내용을 기계어로 해석한다
+fetch operands(피연산자):피연산자를 cpu로 가져온다
+excute: 명령을 실행시킨다
+store output: 값을 저장한다(안할 수도 있다)
+
+#사이클에 따른 메모리 읽기
+address를 불러온다-> 데이터를 불러온다 -> 데이터를 가져온다 -> 데이터를 적용한다(4사이클 소요)
+
+#cache memory
+level1 memory는 내부에 2는 외부에 있다
+cache miss 캐쉬 메모리에 데이터가 없다
+cache hit 캐쉬 메모리에 데이터가 있다
+
+#IA-32 microcomputer의 구성
+1.motherboard
+2.video output
+
+3.memory
+ROM(readonly)
+EPROM(erasable and programable)
+dynamic RAM
+static RAM(캐쉬)
+Video RAM
+CMOS RAM
+
+4.input output port
+USB(universal serial bus)
+Parallel(ex)프린터
+Serial(ex)모뎀 비트 단위 전송
+
+2020.03.31 3주차
+general purpose register의 종류에 대해서 공부함
+작업관리자의 기능과 사용 방법에 대해서 공부함
+
+pipelined Execution 에 대해서 공부함
+paging 에 대해서 공부함 -> 메모리를 모두 사용했을 때 관리 방법
+
+*어셈블리어 기초
+#integer constants,expression
+연산자 우선 순위
+숫자 표현 방법에 따른 알파벳
+
+#character
+아스키는 하나의 바이트를 차지한다
+" " ' ' 둘 다 사용할 수 있다
+인용구 안에 인용구가 들어갈 수 있다
+
+#wrods and identifier
+예약어가 (변수)id로 사용될 수 없다
+변수의 첫번째는 반듯이 문자,_@?$여야한다
+
+#directivies and instruction
+directive는 어셈블러마다 다른 값을 가진다
+instruction은 어셈블러를 통해 어셈블된 코드를 말한다
+
+#label
+주소를 표시한다?
+identifier 규칙을 따른다
+
+#operands & mnemonics
+여러가지 명령 mov,add,mul
+operands -> constant expression, register, memory
+
+#Comments -> 코멘트
+single line -> ; 
+multi line - > COMMENT+앞뒤로 같은 문자를 붙인다
+---------------------------------------------------
+2020.04.07 4주차
+assembling linking and running program
+어셈블리어 코드 덧셈 뺄샘 할당 배움
+리틀 엔디안 오더에 대해서 배움
+
+current location counter $를 배움
+list size = ($ - list) / size of one scale 데이터 하나를 저장하는 단위
+EQU 데이터 static 정의하기(?)
+
+Data Transfers 
+Addressing
+Arithmetic
+mov 는 사이즈가 같을 때만 이동할 수 있다
+더 큰 사이즈로 옮길려면 movzx를 사용한다
+부호까지 옮길려면 movsx를 사용한다
+xchg 는 두 레지스터 값을 교환한다
+
+2020.04.14 5주차
+inc 와 dec 연습
+    ax
+ ah   al
+add 와 sub 연습
+ EAX(ax 2개로 구성) -> DWORD는 4바이트 8칸
+NEG -> 부호를 반대로 바꾼다
+
+Flag 종류 설명
+zero flag는 destination operand가 0이되면 1로 세트된다
+0이 아니게되면 0으로 clear된다
+
+sign flag는 destination operand가 음수이면 1로 세트된다
+양수이면 0으로 clear된다
+
+CPU는 부호와 상관없이 작동한다 -> 프로그래머가 데이터 타입에 대해서 잘 생각할 필요가 있다
+Carry flag 는 최상단 비트에 carry가 생겼을 때 set 된다
+ADD
+Overflow Flag = CF xor MSB
+Carry flag = MSB의 캐리가 생긴다
+SUB
+Overflow Flag = CF xor MSB
+Carry flag = - (MSB의 캐리가 생긴다)
+
+OFFSET: DATA의 주소값을 할당하는 명령어
+PTR: 크기가 다른 레지스터의 있는 값을 레지스터에 넣을 수 있게하는 레지스터 크기 다음에 적는다
+TYPE: 변수의 크기를 알려준다 EX) mov eax, TYPE var1
+LENGTHOF: 변수의 길이를 알려준다 EX) byte1 BYTE 10,20,30 -> 3  | array2 WORD 5 DUP(3 DUP (?)) ->15
+SIZEOF: LENGTHOF * TYPE(BYTE =1 , WORD = 2, DWORD = 4......)
+LABEL: 예약어를 변수로 바꿀 수 있는 명령어 (PTR과 유사)
+
+#INDIRECT OPERANDS
+포인터처럼 역참조 할 수 있다
+ptrW: 주소값을 저장할 수 있다 -> ptrW DWORD OFFSET arrayW
+JMP: EX)JMP target 형식으로 점프한다(EIP를 타겟으로 이동시킨다)
+LOOP: LOOP target 형식으로 사용 ECX를 1 줄이고 ECX가 0이 아니면 점프한다
+2020.04.21 6주차
+loop 예시 예제들 사용법 익히기
+stack 설명, 함수역활을 하는 call ret 설명
+local label 과 global label
+
+2020.04.28 7주차
+#Irvine32.inc 라이브러리
+call WriteHex //show hex number
+call Crlf // end of line
+등등....
+
+#Conditional Processing 조건 처리
+조건 점프
+flag + <boolean> and or ... 
+jnz : zeroflag가 0이 아니면 점프
+jz : zeroflag가 0이면 점프
+cmp : 두 값을 빼는 과정에서 cmp al, -2 => al - (-2)
+flag가 변화한다
+#문자열 암호화 프로그램
+
+2020.05.12 9주차
+#loop
+loope destination: ecx == 0 jump
+loopz destination: ecx == 0 && zf == 1 jump
+loopnz : not
+loopne : not
+#conditinal Structure
+if statement : 
+Ex){
+mov eax, op1
+cmp eax, op2
+jne L1
+mov X, 1
+jmp L2
+L1: mov X,2
+L2:
+}
+#And 표현하기, Or 표현하기, while 표현하기
+#Table Driven selection
+CashTable BYTE 'A'
+DWORD process_A
+EntrySize = ($ - CaseTable)
+BYTE 'B'
+DWORD process_B
+BYTE 'D'
+DWORD process_D
+BYTE 'C'
+DWORD process_C
+NumberOfEntries = ($ - CaseTable) / EntrySize
+
+2020.05.19 10주차
+#유한 상황 머신
+각 상황을 네모로 표시하고 화살표로 상황의 변화를 알려준다
+두꺼운 네모는 상황의 종료를 나타낸다
+
+#Shift and Rotate Instruction
+SHL -> shift left == 2곱하기
+SHR -> shift right == 2나누기
+부호는 유지
+- - - - - -
+ROL -> rotate left
+ROR -> rotate right
+
