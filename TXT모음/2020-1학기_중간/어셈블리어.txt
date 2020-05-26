@@ -213,3 +213,15 @@ SHR -> shift right == 2나누기
 ROL -> rotate left
 ROR -> rotate right
 
+2020.05.26 11주차
+RCL 캐리 플레그까지 합쳐서 rotate left
+RCR 캐리 플레그까지 합쳐서 rotate right
+
+SHLD dstination source count
+목표값과 소스에 있는 값을 카운트만큼 왼쪽으로 이동시킨다
+하지만 소스값은 그대로다
+SHRD 오른쪽으로 옮긴다
+
+곱하기를 shifting으로 표현하기 binary shifting : Ex) 36* x = 32x + 4x
+
+

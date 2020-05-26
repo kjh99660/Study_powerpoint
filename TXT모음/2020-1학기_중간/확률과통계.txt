@@ -143,3 +143,7 @@ posterior = Likelihood * prior/ p(x)
 
 2020.05.23 10 - 2주차
 #Naive Bayes classifier
+
+2020.05.26 11주차
+#Decision Tree and Random forest
+supervised machine learning
