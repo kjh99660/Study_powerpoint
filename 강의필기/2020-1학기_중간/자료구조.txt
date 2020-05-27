@@ -126,3 +126,10 @@ levelorder 레벨 순으로 왼쪽부터 오른쪽으로
 재귀적이지 않게 스택을 사용한 인오더 표현 설명
 레벨 오더로 큐를 이용해서 탐색하는 코드 설명
 
+2020.05.27 11-2주차
+#Heap
+Max tree -> 이진트리 + 자기 자식 노드에 있는 값보다 작으면 안된다
+Max heap -> 완전이진트리 + Max tree
+Max 우선순위 큐 -> Max heap사용
+
+Heap설명 insert, delete, Heap sort, C코드로 설명
