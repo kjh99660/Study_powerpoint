@@ -147,3 +147,17 @@ posterior = Likelihood * prior/ p(x)
 2020.05.26 11주차
 #Decision Tree and Random forest
 supervised machine learning
+
+2020.06.02 12주차
+#Information gain
+IG(X) = H(Y) - H(Y|X2)가 클수록 더 좋은 특징이다. 
+
+#Random Forests
+
+2020.06.04 12-2주차
+#Continuous Random variables
+
+2020.06.11 13-2주차
+#cumulative distribute function
+
+#

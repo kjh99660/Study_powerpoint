@@ -347,9 +347,35 @@ public abstract double getArea()로 추상 메서드 선언 가능하다
 body는 없고 signature만 만들 수 있다.
 
 인터페이스 : constants와 추상 메서드만을 포함하는 클래스와 유사하다
-해야하는 것들을 특정하기 위해서 사용한다
+해야하는 것들을 특정하기 위해서 사용한다, 다중 상속을 할 수 있다
 
 public interface InterfaceName 으로 선언,
 public abstract String howToEat(); 으로 메서드를 선언하지만 
 추상화 표현을 빼도 사용할 수 있다.(public & abstract) 
 implements라는 키워드로 구현할 수 있다
+
+2020.06.01 12 -1주차
+#Abstract Class
+
+#Cloneable Interfaces
+Marker interface: 내용은 없고 어떤 특성을 갖고 있다는 점을 명시적으로 알리기 위해 사용한다.
+Cloneable 인터페이스를 사용하면 Object 클래스에 clone()을 사용할 수 있다.
+
+#Wrapper Classes
+C에서 사용하던 코드를 사용하기 위해 자료형을 자바의 자료형으로 포함 시키는 것
+
+2020.06.03 12 - 2주차
+#Event Driven programming
+
+2020.06.08 13 - 1주차
+#event handler
+ineer class 프로그램을 간단화하고 정보 은닉성을 높여준다
+접근하는 경우 외부 클래스의 오브젝트에 접근한 후 접근할 수 있다
+-> object.ineer class
+
+2020.06.10 13 - 2주차
+#Timer event Exception
+
+#Exception Handling
+runtime error를 어떻게 다루어야 하는가?
+메서드 내부에서 일어나는 예외를 처리할 수 있다.

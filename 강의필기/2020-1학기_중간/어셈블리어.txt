@@ -224,4 +224,17 @@ SHRD 오른쪽으로 옮긴다
 
 곱하기를 shifting으로 표현하기 binary shifting : Ex) 36* x = 32x + 4x
 
+2020.06.02 12주차
+#Stack Frame = activation record
+프로시져의 return 주소값이 저장된다, 파라미터값, 레지스터값, 지역변수가 저장된다.
+ESP에서 숫자를 빼서 스택에 공간을 확보한다
+#RET Instruction
+RET 뒤에 숫자를 붙이면 4마다 한 칸씩 더 제거한다
 
+#LEA Instruction, Enter Ins, leave Ins, Invoke?
+지역 변수를 이동시킬 때 사용한다 lea esi, [ebo - 8]
+enter 8(공간 확보), 0는 스택을 사용하는 기본 작업을 한꺼번에 해준다
+enter <-> leave 
+
+2020,06.09 13주차
+#disk & 펙토리얼 & 재귀
